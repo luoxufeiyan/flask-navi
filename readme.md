@@ -1,14 +1,9 @@
-作者的挫作，《Python Linux系统管理与自动化运维》，敬请品鉴。
-
-完整的目录在[这里](https://github.com/lalor/python_for_linux_system_administration)。
-
-![image](https://img3.doubanio.com/lpic/s29554682.jpg)
 
 # 使用说明
 
 在MySQL中导入数据库:
 
-    mysql -h127.0.0.1 -ulaimingxing -plaimingxing -Dtest -P3306 < schema.sql
+    mysql -h127.0.0.1 -u user -p -D flask_navi -P 3306 < schema.sql
 
 修改app.py，配置访问数据库的用户名、密码和端口号。
 
@@ -16,4 +11,15 @@
 
 * 密码加密
 * 用户注册
-* 以用户为维度，管理TodoList
+
+* 后台页面设计
+
+# 感谢
+
+本项目借鉴并参考了以下项目：
+
+* https://github.com/WebStackPage/WebStackPage.github.io
+* https://123.haoip.cn/
+
+
+熊猫图标作者：http://www.turbomilk.com/

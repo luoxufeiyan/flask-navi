@@ -1,2 +1,7 @@
 *.pyc
 .idea
+secure.py
+
+venv/
+
+data\.sql
