@@ -2,6 +2,27 @@
 {% import "bootstrap/wtf.html" as wtf %}
 
 {% block page_content %}
+    <script src="../static/js/moment.min.js"></script>
+    <script>
+    // TODO move js to a separate file
+    // https://stackoverflow.com/questions/32598735/how-to-convert-time-values-inside-jinja-code-to-the-browsers-local-timezone-whe?rq=1
+// When the page loads - the Jinja template is already rendered now
+window.onload = function() {
+  // Get all the elements with the given class, and map through them
+  var el = document.querySelectorAll("td.timezone_convert");
+  var i;
+  for(i=0; i<el.length; i++){
+      conv(el[i]);
+  }
+
+}
+function conv(el){
+    var unixTime = moment.unix(el.innerText);  // This is the time in UTC
+    unixTime.local();  // Switch to using the browser's local timezone
+    el.innerText = unixTime.format('YYYY-MM-DD HH:mm:ss');  // Write the local time back to the element
+    console.log(el.innerText)
+  };
+    </script>
     <!-- Button trigger modal -->
     <div class="container">
         <div class="row">
@@ -46,7 +67,7 @@
         </thead>
         <tbody>
         {% for site in sitelists %}
-
+            <!-- TODO add filter-->
             <!-- tr -->
             <tr class="bz-row">
                 <td>{{ site.id }}</td>
@@ -58,7 +79,7 @@
 
                 </td>
                 <td>{{ site.description }}</td>
-                <td>{{ site.create_time }}</td>
+                <td class="timezone_convert">{{ site.create_time }}</td>
                 <td>
                     <a href="{{ url_for('web.change_site', id=site.id) }}" class="btn btn-primary" role="button">修改</a>
                     <a href="{{ url_for('web.delete_site', id=site.id) }}" class="btn btn-danger" role="button">删除</a>
@@ -111,7 +132,5 @@
             </div>
         </div>
     </div>
-
-
 
 {% endblock %}
