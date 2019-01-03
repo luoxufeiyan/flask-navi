@@ -61,9 +61,12 @@
                     <p class="text-muted" align="center">Copyright © LXFY|<a href="https://github.com/luoxufeiyan/flask-navi" target="_black">GitHub</a></p>
                 </div>
             </div>
+        {% endblock footer %}
+        {% block scripts %}
+            {{ super() }}
             <!-- Bottom Scripts -->
-            <script src="../static/js/jquery-1.11.1.min.js"></script>
-            <script src="../static/js/bootstrap.min.js"></script>
+{#            <script src="../static/js/jquery-1.11.1.min.js"></script>#}
+{#            <script src="../static/js/bootstrap.min.js"></script>#}
             <script src="../static/js/TweenMax.min.js"></script>
             <script src="../static/js/resizeable.js"></script>
             <script src="../static/js/joinable.js"></script>
@@ -71,7 +74,7 @@
             <script src="../static/js/xenon-toggles.js"></script>
             <!-- JavaScripts initializations and stuff -->
             <script src="../static/js/xenon-custom.js"></script>
-        {% endblock footer %}
+        {% endblock %}
     </div>
 {% endblock %}
 
