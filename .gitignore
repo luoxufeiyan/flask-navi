@@ -3,5 +3,6 @@
 secure.py
 
 venv/
+.vscode/
 
 data\.sql
