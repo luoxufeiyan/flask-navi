@@ -13,10 +13,11 @@ from ext import db, login_manager
 
 def create_app():
     app = Flask(__name__)
-    app.config.from_object('secure')
-    app.config.from_object('settings')
     register_blueprint(app)
     bootstrap = Bootstrap(app)
+    # load conffig
+    app.config.from_object('secure')
+    app.config.from_object('settings')
 
     db.init_app(app)
     with app.app_context():

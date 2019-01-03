@@ -7,3 +7,4 @@
 # @Software: PyCharm
 
 LINKS_PER_LINE = 6
+BOOTSTRAP_SERVE_LOCAL = True
