@@ -5,11 +5,17 @@
 
     mysql -h127.0.0.1 -u user -p -D flask_navi -P 3306 < schema.sql
 
-修改app.py，配置访问数据库的用户名、密码和端口号。
+修改secure.py，配置访问数据库的用户名、密码和端口号。
 
 ## 部署
 
 推荐使用virtualenv创建隔离环境。
+```
+pip3 install virtualenv
+virtualenv flask-navi/
+source flask-navi/bin/activate
+pip3 install -r requirements.txt
+```
 
 
 # TODO
